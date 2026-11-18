@@ -61,12 +61,12 @@ namespace Practice_1
                     // Привязка к таблице
                     dataGridView1.DataSource = tableData;
 
-                    if (dataGridView1.Columns.Count > 0)
+                    if (dataGridView1.Columns.Count >= 4)
                     {
-                        dataGridView1.Columns["НомерКруга"].HeaderText = "Круг";
-                        dataGridView1.Columns["Длительность"].HeaderText = "Время";
-                        dataGridView1.Columns["Дистанция"].HeaderText = "Дистанция";
-                        dataGridView1.Columns["Средняя Скорость"].HeaderText = "Ср. Скорость";
+                        dataGridView1.Columns[0].HeaderText = "Круг";
+                        dataGridView1.Columns[1].HeaderText = "Время";
+                        dataGridView1.Columns[2].HeaderText = "Дистанция";
+                        dataGridView1.Columns[3].HeaderText = "Ср. Скорость";
                     }
                 }
                 catch (Exception ex)

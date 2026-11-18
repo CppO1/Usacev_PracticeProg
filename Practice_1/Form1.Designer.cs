@@ -125,7 +125,7 @@
             pictureBox1.BackgroundImageLayout = ImageLayout.Stretch;
             pictureBox1.Location = new Point(0, 31);
             pictureBox1.Name = "pictureBox1";
-            pictureBox1.Size = new Size(887, 445);
+            pictureBox1.Size = new Size(887, 575);
             pictureBox1.TabIndex = 5;
             pictureBox1.TabStop = false;
             pictureBox1.Click += pictureBox1_Click;
@@ -134,7 +134,7 @@
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(887, 475);
+            ClientSize = new Size(887, 605);
             Controls.Add(label2);
             Controls.Add(label1);
             Controls.Add(dataGridView1);
