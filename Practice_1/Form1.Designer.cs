@@ -1,4 +1,4 @@
-﻿namespace Practice_1
+﻿namespace Practice_OOP
 {
     partial class Form1
     {
@@ -34,14 +34,18 @@
             файлToolStripMenuItem = new ToolStripMenuItem();
             открытьФайлToolStripMenuItem = new ToolStripMenuItem();
             выходToolStripMenuItem = new ToolStripMenuItem();
+            сохранитьБДToolStripMenuItem = new ToolStripMenuItem();
             listBox1 = new ListBox();
-            dataGridView1 = new DataGridView();
+            dataGridViewLaps = new DataGridView();
             label1 = new Label();
             label2 = new Label();
             pictureBox1 = new PictureBox();
+            dataGridViewWorkouts = new DataGridView();
+            textBoxGeneralInfo = new TextBox();
             menuStrip1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)dataGridViewLaps).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)dataGridViewWorkouts).BeginInit();
             SuspendLayout();
             // 
             // openFileDialog1
@@ -55,13 +59,13 @@
             menuStrip1.Items.AddRange(new ToolStripItem[] { файлToolStripMenuItem });
             menuStrip1.Location = new Point(0, 0);
             menuStrip1.Name = "menuStrip1";
-            menuStrip1.Size = new Size(887, 28);
+            menuStrip1.Size = new Size(1192, 28);
             menuStrip1.TabIndex = 0;
             menuStrip1.Text = "menuStrip1";
             // 
             // файлToolStripMenuItem
             // 
-            файлToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { открытьФайлToolStripMenuItem, выходToolStripMenuItem });
+            файлToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { открытьФайлToolStripMenuItem, выходToolStripMenuItem, сохранитьБДToolStripMenuItem });
             файлToolStripMenuItem.Name = "файлToolStripMenuItem";
             файлToolStripMenuItem.Size = new Size(59, 24);
             файлToolStripMenuItem.Text = "Файл";
@@ -79,25 +83,32 @@
             выходToolStripMenuItem.Size = new Size(189, 26);
             выходToolStripMenuItem.Text = "Выход";
             // 
+            // сохранитьБДToolStripMenuItem
+            // 
+            сохранитьБДToolStripMenuItem.Name = "сохранитьБДToolStripMenuItem";
+            сохранитьБДToolStripMenuItem.Size = new Size(189, 26);
+            сохранитьБДToolStripMenuItem.Text = "Сохранить БД";
+            сохранитьБДToolStripMenuItem.Click += сохранитьБДToolStripMenuItem_Click;
+            // 
             // listBox1
             // 
             listBox1.BackColor = Color.AliceBlue;
+            listBox1.BorderStyle = BorderStyle.FixedSingle;
             listBox1.FormattingEnabled = true;
             listBox1.Location = new Point(12, 58);
             listBox1.Name = "listBox1";
-            listBox1.Size = new Size(279, 84);
+            listBox1.Size = new Size(554, 82);
             listBox1.TabIndex = 1;
             // 
-            // dataGridView1
+            // dataGridViewLaps
             // 
-            dataGridView1.BackgroundColor = Color.Azure;
-            dataGridView1.BorderStyle = BorderStyle.Fixed3D;
-            dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridView1.Location = new Point(295, 58);
-            dataGridView1.Name = "dataGridView1";
-            dataGridView1.RowHeadersWidth = 51;
-            dataGridView1.Size = new Size(580, 405);
-            dataGridView1.TabIndex = 2;
+            dataGridViewLaps.BackgroundColor = Color.Azure;
+            dataGridViewLaps.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dataGridViewLaps.Location = new Point(12, 187);
+            dataGridViewLaps.Name = "dataGridViewLaps";
+            dataGridViewLaps.RowHeadersWidth = 51;
+            dataGridViewLaps.Size = new Size(554, 399);
+            dataGridViewLaps.TabIndex = 2;
             // 
             // label1
             // 
@@ -112,7 +123,7 @@
             // label2
             // 
             label2.AutoSize = true;
-            label2.Location = new Point(295, 35);
+            label2.Location = new Point(12, 164);
             label2.Name = "label2";
             label2.Size = new Size(132, 20);
             label2.TabIndex = 4;
@@ -123,21 +134,46 @@
             pictureBox1.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
             pictureBox1.BackgroundImage = (Image)resources.GetObject("pictureBox1.BackgroundImage");
             pictureBox1.BackgroundImageLayout = ImageLayout.Stretch;
+            pictureBox1.Cursor = Cursors.Help;
             pictureBox1.Location = new Point(0, 31);
             pictureBox1.Name = "pictureBox1";
-            pictureBox1.Size = new Size(887, 575);
+            pictureBox1.Size = new Size(1368, 682);
+            pictureBox1.SizeMode = PictureBoxSizeMode.AutoSize;
             pictureBox1.TabIndex = 5;
             pictureBox1.TabStop = false;
             pictureBox1.Click += pictureBox1_Click;
+            // 
+            // dataGridViewWorkouts
+            // 
+            dataGridViewWorkouts.BackgroundColor = Color.Azure;
+            dataGridViewWorkouts.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dataGridViewWorkouts.Location = new Point(612, 187);
+            dataGridViewWorkouts.Name = "dataGridViewWorkouts";
+            dataGridViewWorkouts.RowHeadersWidth = 51;
+            dataGridViewWorkouts.Size = new Size(554, 399);
+            dataGridViewWorkouts.TabIndex = 6;
+            dataGridViewWorkouts.CellClick += dataGridViewWorkouts_CellClick;
+            // 
+            // textBoxGeneralInfo
+            // 
+            textBoxGeneralInfo.BackColor = Color.Azure;
+            textBoxGeneralInfo.Location = new Point(612, 59);
+            textBoxGeneralInfo.Multiline = true;
+            textBoxGeneralInfo.Name = "textBoxGeneralInfo";
+            textBoxGeneralInfo.ReadOnly = true;
+            textBoxGeneralInfo.Size = new Size(554, 82);
+            textBoxGeneralInfo.TabIndex = 7;
             // 
             // Form1
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(887, 605);
+            ClientSize = new Size(1192, 628);
+            Controls.Add(textBoxGeneralInfo);
+            Controls.Add(dataGridViewWorkouts);
             Controls.Add(label2);
             Controls.Add(label1);
-            Controls.Add(dataGridView1);
+            Controls.Add(dataGridViewLaps);
             Controls.Add(listBox1);
             Controls.Add(menuStrip1);
             Controls.Add(pictureBox1);
@@ -147,8 +183,9 @@
             Load += Form1_Load;
             menuStrip1.ResumeLayout(false);
             menuStrip1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
+            ((System.ComponentModel.ISupportInitialize)dataGridViewLaps).EndInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
+            ((System.ComponentModel.ISupportInitialize)dataGridViewWorkouts).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -161,9 +198,12 @@
         private ToolStripMenuItem открытьФайлToolStripMenuItem;
         private ToolStripMenuItem выходToolStripMenuItem;
         private ListBox listBox1;
-        private DataGridView dataGridView1;
+        private DataGridView dataGridViewLaps;
         private Label label1;
         private Label label2;
         private PictureBox pictureBox1;
+        private DataGridView dataGridViewWorkouts;
+        private TextBox textBoxGeneralInfo;
+        private ToolStripMenuItem сохранитьБДToolStripMenuItem;
     }
 }

@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 using System.Collections.Generic;
 
-namespace Practice_1.models.Activity
+namespace Practice_OOP.models.Activity
 {
     //отчет по кругам
     public class Window

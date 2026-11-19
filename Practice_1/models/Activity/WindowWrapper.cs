@@ -5,7 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 
-namespace Practice_1.models.Activity
+namespace Practice_OOP.models.Activity
 {
     public class WindowWrapper
     {

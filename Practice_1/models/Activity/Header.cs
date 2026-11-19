@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Practice_1.models.Activity
+namespace Practice_OOP.models.Activity
 {// Сводка по готовым данным за тренировку
     public class Header
     {

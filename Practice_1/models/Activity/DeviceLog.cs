@@ -8,7 +8,7 @@ using System.Collections.Generic;
 
 using System.Collections.Generic;
 
-namespace Practice_1.models.Activity
+namespace Practice_OOP.models.Activity
 {//Главная папка, содержащая разделы
     public class DeviceLog
     {

@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Practice_1.models.Activity
+namespace Practice_OOP.models.Activity
 {
     public class ActivityModel
     {
